@@ -25,6 +25,7 @@ public class CompetenciaController implements Serializable{
 	
 	
 	public CompetenciaController() {
+		//comentario
 		 competencia = new Competencia();
 		dao = new CompetenciaDAO();
 	}

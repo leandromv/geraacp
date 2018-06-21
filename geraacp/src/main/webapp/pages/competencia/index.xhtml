@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Competências</title>
+</h:head>
+<h:body>
+	<h:button value="Novo" outcome="#{competenciaController.adicionar()}"/>
+	<h:form id="comptenciaForm">
+		<p:dataTable id="competenciaTable" 
+			value="#{competenciaController.listCompetencia}" var="competencia"
+			styleClass="table table-striped table-bordered tableUpdated" >
+			<f:facet name="header">
+            	Listagem de Competências
+        	</f:facet>
+			<p:column headerText="Id">
+				<h:outputText value="#{competencia.id}" />
+			</p:column>
+			<p:column headerText="Mês">
+				<h:outputText value="#{competencia.mes}" />
+			</p:column>
+			<p:column headerText="Ano">
+				<h:outputText value="#{competencia.ano}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	<br/>
+	<p:link value="Voltar" outcome="/index.jsf" />
+
+
+</h:body>
+</html>

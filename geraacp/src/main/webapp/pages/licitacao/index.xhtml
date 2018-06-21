@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Licitações</title>
+</h:head>
+<h:body>
+	<h:button value="Novo" outcome="#{licitacaoController.adicionar()}"/>
+	<h:form id="licitForm">
+
+		<!-- 
+		<h:dataTable id="licitacaoTable"
+			value="#{licitacaoController.ListAllLicitacoes()}" var="licit"
+			styleClass="table table-striped table-bordered tableUpdated">
+			<h:column>
+				<h:outputText value="#{licit.id}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{licit.numerolicit}" />
+				
+			</h:column>
+		</h:dataTable>	
+	 	-->
+	 	
+		<p:dataTable id="licitacaoTable" 
+			value="#{licitacaoController.listLicitacao}" var="licit"
+			styleClass="table table-striped table-bordered tableUpdated" >
+			<f:facet name="header">
+            	Listagem de Licitações
+        	</f:facet>
+			<p:column headerText="Id">
+				<h:outputText value="#{licit.id}" />
+			</p:column>
+			<p:column headerText="Numero">
+				<h:outputText value="#{licit.numerolicit}" />
+				
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	<br/>
+	<p:link value="Voltar" outcome="/index.jsf" />
+
+
+</h:body>
+</html>
